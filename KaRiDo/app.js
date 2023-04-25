@@ -58,13 +58,16 @@ function syncHostToStorage(){
             document.querySelector(".h1-editable").textContent = localStorage.getItem("h1-editable");
         }
 
-        // Анимация печатающегося текста
-        textTyping(document.querySelector(".p-editable"));
-
     } 
 }
 // При загрузке DOM, задачи из localStorage добавляются на страницу
-addEventListener("DOMContentLoaded", syncHostToStorage);
+addEventListener("DOMContentLoaded", () => {
+
+    // Анимация печатающегося текста
+    textTyping(document.querySelector(".p-editable"));
+
+    syncHostToStorage();
+});
 
 
 // Input ввода текста задачи
