@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #fff0e5;
+}
+.container{
+    max-width: 1200px;
+    margin: 50px auto;
+}
+.flex{
+    display: flex;
+
+
+    margin: 0 30px;
+}
+h1{
+    margin: 0 30px;
+}
+
+.project{
+    max-height: fit-content;
+    margin: 30px 0;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    box-shadow: 0 0 rgba(0,0,0,0.5);
+    transition: all 0.3s ease-in-out;
+}
+.project:focus{
+    border: 1px solid black;
+}
+.project:hover{
+    box-shadow: -7px 7px #10162f;
+    transform: translate(7px, -7px);
+    transition: all 0.3s ease-in-out;
+}
+img{
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.project:last-of-type{
+    margin-left: 30px;
+
+    flex-grow: 1.2;
+}
