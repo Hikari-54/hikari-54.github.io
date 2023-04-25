@@ -10,18 +10,23 @@ body{
     max-width: 1200px;
     margin: 50px auto;
 }
-.flex{
-    display: flex;
-
-
-    margin: 0 30px;
-}
 h1{
+    font-family: 'Inconsolata', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+
     margin: 0 30px;
 }
 
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    margin: 0 30px;
+}
 .project{
-    max-height: fit-content;
+    max-width: 100%;
+    height: fit-content;
     margin: 30px 0;
     background-color: #fff;
     border: 1px solid black;
@@ -29,6 +34,9 @@ h1{
 
     box-shadow: 0 0 rgba(0,0,0,0.5);
     transition: all 0.3s ease-in-out;
+}
+.project:last-of-type{
+    margin-left: 30px;
 }
 .project:focus{
     border: 1px solid black;
@@ -40,11 +48,4 @@ h1{
 }
 img{
     max-width: 100%;
-    object-fit: contain;
-}
-
-.project:last-of-type{
-    margin-left: 30px;
-
-    flex-grow: 1.2;
 }

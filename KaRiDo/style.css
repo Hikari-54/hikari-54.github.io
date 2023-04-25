@@ -1,0 +1,346 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:focus,:active{
+    outline: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+img{
+    user-select: none;
+}
+body{
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+    color: #575767;
+}
+button{
+    cursor: pointer;
+}
+.container{
+    margin: 0 30px;
+}
+
+
+h1{
+    font-size: 48px;
+    font-weight: 800;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+h2{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+p{
+    font-size: 18px;
+}
+.text-small{
+    font-size: 16px;
+}
+.medium{
+    font-weight: 500;
+}
+.bold{
+    font-weight: 700;
+}
+
+.black{
+    color: #000000;
+}
+.light-gray{
+    color: #A8A8B4;
+}
+
+
+header{
+    width: 100%;
+    height: 54px;
+    border-bottom: 1px solid #643FDB;
+    top: 0;
+    position: sticky;
+    color: #643FDB;
+    background-color: #FFFFFF;
+}
+header h2{
+    margin: 0;
+}
+.header-flex{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Задачи */
+.divider{
+    max-width: 100%;
+    margin: 30px 0;
+    border-bottom: 1px solid #DADADA;
+    color: #DADADA;
+}
+.todo-task{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-left: 3px;
+}
+.todo-task p{
+    width: calc(100% - 68px); /* 68px = ширина кнопок по бокам + два margin'a */
+    overflow-wrap: anywhere;
+    min-height: 24px;
+    margin: 0 10px;
+}
+.todo-task button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 24px;
+    height: 24px;
+    border: #DADADA solid 2px;
+    background-color: #fff;
+}
+.todo-task button:last-child{
+    justify-self: flex-end;
+}
+.taskDoneImg{
+    opacity: 0;
+}
+
+
+/* Drag&Drop */
+.draggable{
+    cursor: move;
+}
+.dragging{
+    opacity: 0.75;
+    background-color: #F3F3F3;
+    border: #575767 dotted 2px;
+}
+
+
+/* Добавление задачи */
+.task-list{
+    width: 100%;
+    min-height: 24px;
+    border-radius: 5px;
+}
+.container-input-task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    background-color: #F3F3F3;
+}
+.container-input-task img{
+    width: 20px;
+    height: 20px;
+}
+.input-task{
+    width: calc(100% - 54px);
+    margin-right: 5px;
+    border: none;
+    background-color: #F3F3F3;
+    font-size: 16px;
+    font-family: inherit;
+    color: #575767;
+}
+.input-task::placeholder { 
+    font-family: inherit;
+    color: #575767;
+    user-select: none;
+}
+.colorPickerButton{
+    width: 18px;
+    height: 18px;
+    background-color: #e21515;
+    border: none;
+    margin-right: 5px;
+}
+.addTaskButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 5px;
+}
+
+
+/* Модальное окно выбора цвета */
+.colorPicker{
+    /* Изначально скрыто */
+    display: none;
+    position: absolute;
+    right: 30px;
+    
+    width: 150px;
+    height: 66px;
+    padding: 10px;
+    background-color: #F3F3F3;
+}
+.colorPickerRow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;    
+}
+.colorPickerRow:last-child{
+    margin-bottom: 0;
+}
+.colorPickerItem{
+    width: 18px;
+    height: 18px;
+    border: none;
+}
+
+
+/* Таймер */
+.timer-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.timer-block h2.black{
+    margin-top: 0;
+}
+input[type="time"]{
+    font-size: 20px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #643FDB;
+    border-radius: 5px;
+    color: #575767;
+}
+input[type="time"]:first-child{
+    cursor: pointer;
+}
+.remaining-timer::-webkit-calendar-picker-indicator{
+    display: none;
+    -webkit-appearance: none;
+}
+.timer-control{
+    display: flex;
+}
+.start-timer,
+.reset-timer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+    border: 1px solid #643FDB;
+    border-radius: 5px;
+    background-color: #e3daff;
+}
+button:disabled{
+    background-color: #fff;
+    cursor: default;
+}
+.start-timer img{
+    margin-left: 5px;
+}
+
+button:focus{
+    border: 2px solid #575767;
+}
+
+
+/* Модальное окно помощи */
+.help-button{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    width: 40px;
+    height: 40px;
+    background-color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 500;
+
+    border: 1px solid #575767;
+    border-radius: 50%;
+}
+.help-button:hover{
+    background-color: #DADADA;
+}
+.modal-help{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out all;
+
+    width: 500px;
+    max-width: 80%;
+    padding: 50px 30px;
+    background-color: #FFFFFF;
+    border: 1px solid #575767;
+    border-radius: 5px;
+}
+.modal-help.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+.modal-help ol{
+    list-style-position: inside;
+}
+.modal-help li{
+    margin-bottom: 30px;
+}
+.modal-help li:last-child{
+    margin-bottom: 0;
+}
+.modal-help button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 15px;
+    right: 15px;
+
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: none;
+    font-size: 24px;
+    font-weight: 700;
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #00000080;
+    transition: 200ms ease-in-out all;
+
+    opacity: 0;
+    pointer-events: none;
+}
+.overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.span-editable, .h1-editable, .p-editable{
+    cursor: pointer;
+}

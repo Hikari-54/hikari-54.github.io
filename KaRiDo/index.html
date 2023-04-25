@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ka-Ri-Do App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+
+    <header>
+        <div class="container header-flex">
+            <a href="#"><h2>Ka-Ri-Do App</h2></a>
+            <p class="text-small medium">Welcome back, <span class="span-editable" contenteditable="true">Hikari</span></p>
+        </div>
+    </header>
+    <main>
+        <template>
+            <div class="todo-task draggable" draggable="true">
+                <button onclick="taskDone(this)"><img class="taskDoneImg" src="svg/taskDone.svg" alt="task done"></button>
+                <p>Prototype</p>
+                <button onclick="deleteTask(this)"><img class="deleteTaskImg" src="svg/deleteTask.svg" alt="delete task"></button>
+            </div>
+        </template>
+
+        <div class="container">
+            <div class="inside-header">
+                <h1 class="black h1-editable" contenteditable="true">Today</h1>
+                <p class="text-small bold p-editable" contenteditable="true">Do what you can, with what you've got, where you are.</p>
+            </div>
+
+            <div class="divider"></div>
+            <div class="task-list">
+
+            </div>
+            
+            <div class="container-input-task">
+                <input type="text" name="task" class="input-task medium" placeholder="Add todo">
+                <button class="colorPickerButton"></button>
+                <button class="addTaskButton"><img src="svg/add-task.svg" alt="add task"></button>
+            </div>
+            <div class="colorPicker">
+                <div class="colorPickerRow">
+                    <button class="colorPickerItem colorPickerItem1" style="background-color: rgb(226 21 21);"></button>
+                    <button class="colorPickerItem colorPickerItem2" style="background-color: rgb(253 241 27);"></button>
+                    <button class="colorPickerItem colorPickerItem3" style="background-color: rgb(73 239 179);"></button>
+                    <button class="colorPickerItem colorPickerItem4" style="background-color: rgb(35 21 226);"></button>
+                    <button class="colorPickerItem colorPickerItem5" style="background-color: rgb(80 163 241);"></button>
+                </div>
+                <div class="colorPickerRow">
+                    <button class="colorPickerItem colorPickerItem6" style="background-color: rgb(141 2 184);"></button>
+                    <button class="colorPickerItem colorPickerItem7" style="background-color: rgb(30 235 23);"></button>
+                    <button class="colorPickerItem colorPickerItem8" style="background-color: rgb(241 126 73);"></button>
+                    <button class="colorPickerItem colorPickerItem9" style="background-color: rgb(216 144 223);"></button>
+                    <button class="colorPickerItem colorPickerItem10" style="background-color: rgb(189 139 82);"></button>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="timer-block">
+                <h2 class="black">Timer setting</h2>
+                <div class="timer-control">
+                    <input type="time" name="setup-timer" value="00:05:00" step="1" class="setup-timer">
+                    <button class="start-timer">
+                        <img src="svg/start-timer.svg" alt="start timer">
+                    </button>
+                    <button class="reset-timer">
+                        <img src="svg/reset-timer.svg" alt="reset timer">
+                    </button>
+                </div>
+                <h2>Remaining time</h2>
+                <input type="time" name="remaining-timer" value="00:00:00" step="1" class="remaining-timer" disabled>
+
+            </div>
+
+        </div>
+    </main>
+    
+    <button class="help-button">?</button>
+    <div class="modal-help">
+        
+        <button>&times;</button>
+        <ol>
+            <li>To add a task, you can press the Enter key</li>
+            <li>When you click on the text, you can change the name of the board, the caption below it, and the nickname in the upper right corner.</li>
+            <li>All changes are saved in your browser's memory.</li>
+            <li>The Drag&Drop function is active for tasks.</li>
+        </ol>
+        
+    </div>
+    <div class="overlay"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

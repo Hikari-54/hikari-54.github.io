@@ -1,0 +1,11 @@
+@media screen and (max-width: 360px) {
+    .container{
+        margin: 0 10px;
+    }
+    header h2{
+        font-size: 19px;
+    }
+    header p{
+        font-size: 15px;
+    }
+}
